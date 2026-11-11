@@ -1,0 +1,13 @@
+{
+  "name": "naples-community-portal-projetos",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portal de solicitações de mapas e sistemas da Naples Community",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch --env-file=.env server.js",
+    "test": "node --test tests/*.test.js"
+  }
+}

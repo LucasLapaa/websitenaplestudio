@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#070d0b" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Moderação — Naples Community</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="stylesheet" href="/styles.css" />
+  <script defer src="/admin.js"></script>
+</head>
+<body class="admin-body">
+  <div class="page-glow" aria-hidden="true"></div>
+  <header class="site-header admin-header"><div class="container header-inner"><a class="brand" href="/"><span class="brand-icon">N</span><span class="brand-label">NAPLES <span>COMMUNITY</span><small>STUDIO PORTAL</small></span></a><span class="admin-chip">🔒 ÁREA RESTRITA</span><a class="header-link" href="/">Voltar ao site ↗</a></div></header>
+  <main class="container admin-main">
+    <section class="login-card" id="login-screen">
+      <div class="login-sigil">N</div>
+      <div class="eyebrow eyebrow-muted">PAINEL DE MODERAÇÃO</div>
+      <h1>Acesso <em>restrito.</em></h1>
+      <p>Entre com a senha definida no Railway para visualizar os pedidos e anexos enviados pelos clientes.</p>
+      <form id="login-form"><label for="admin-password">Senha da equipe</label><input id="admin-password" name="password" type="password" minlength="12" placeholder="Digite a senha da moderação" autocomplete="current-password" required /><p id="login-error" class="form-error" hidden role="alert"></p><button class="btn btn-primary btn-full" type="submit" id="login-submit">Acessar painel ↗</button></form>
+      <div class="login-caption">🔐 Os dados não são visíveis sem autenticação.</div>
+    </section>
+
+    <section class="dashboard" id="dashboard" hidden>
+      <div class="dashboard-header"><div><div class="eyebrow eyebrow-muted">NAPLES STUDIOS / ADMINISTRADOR</div><h1>Painel de <em>pedidos.</em></h1><p>Consulte solicitações, veja anexos e acompanhe o andamento dos projetos.</p></div><button id="logout" class="btn btn-outline">Sair da conta ↗</button></div>
+      <div class="dashboard-stats"><div class="metric-card"><small>TOTAL DE PEDIDOS</small><strong id="stat-total">0</strong><span>Solicitações recebidas</span></div><div class="metric-card"><small>AGUARDANDO ANÁLISE</small><strong id="stat-new">0</strong><span>Novos projetos</span></div><div class="metric-card"><small>EM ANDAMENTO</small><strong id="stat-progress">0</strong><span>Em desenvolvimento</span></div><div class="metric-card"><small>CONCLUÍDOS</small><strong id="stat-done">0</strong><span>Pedidos finalizados</span></div></div>
+      <div class="admin-tools"><div class="tool-header"><h2>Solicitações recebidas</h2><button id="refresh" class="btn btn-outline btn-small">↻ Atualizar</button></div><div class="filters"><input id="search" type="search" placeholder="Buscar código, usuário ou título..." aria-label="Pesquisar pedidos" /><select id="filter-dev" aria-label="Filtrar desenvolvedor"><option value="">Todos os desenvolvedores</option><option value="DEV NAPLES">DEV NAPLES</option><option value="BRADOCK">BRADOCK</option></select><select id="filter-status" aria-label="Filtrar status"><option value="">Todos os status</option><option value="novo">Recebido</option><option value="andamento">Em andamento</option><option value="concluido">Concluído</option></select></div></div>
+      <div class="admin-layout"><div id="orders-list" class="orders-list" aria-live="polite"></div><article class="order-detail" id="order-detail"><div class="empty-detail"><span>⌕</span><h3>Selecione um pedido</h3><p>Escolha uma solicitação para visualizar os detalhes e a imagem de referência.</p></div></article></div>
+    </section>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
